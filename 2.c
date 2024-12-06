@@ -35,8 +35,8 @@ int main()
                     neededHeight = towers[k][0];
                 }
             }
-            double result = ((double) towers[j][1]) / ((double) hit);
-            printf("%.0lf ",ceil(result));
+            double result = ((double)towers[j][1]) / ((double)hit);
+            printf("%.0lf ", ceil(result));
         }
         printf("\n");
     }
