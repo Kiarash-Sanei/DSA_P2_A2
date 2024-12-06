@@ -3,32 +3,32 @@
 
 typedef struct stack
 {
-    int *informations;
-    int size;
+    long long *informations;
+    long long size;
 } stack;
 
 int main()
 {
-    int n;
-    scanf("%d", &n);
+    long long n;
+    scanf("%lld", &n);
     for (int i = 0; i < n; i++)
     {
-        int peopleCount;
-        scanf("%d", &peopleCount);
+        long long peopleCount;
+        scanf("%lld", &peopleCount);
 
-        int towers[peopleCount][3];
+        long long towers[peopleCount][3];
         for (int j = 0; j < peopleCount; j++)
         {
-            scanf("%d %d %d", towers[j], towers[j] + 1, towers[j] + 2);
+            scanf("%lld %lld %lld", towers[j], towers[j] + 1, towers[j] + 2);
         }
 
-        int *left = calloc(peopleCount, sizeof(int));
-        int *right = calloc(peopleCount, sizeof(int));
+        long long *left = calloc(peopleCount, sizeof(long long));
+        long long *right = calloc(peopleCount, sizeof(long long));
 
         stack s;
-        s.informations = calloc(peopleCount, sizeof(int));
+        s.informations = calloc(peopleCount, sizeof(long long));
         s.size = 0;
-        int hit = 0;
+        long long hit = 0;
 
         for (int j = 0; j < peopleCount; j++)
         {
@@ -44,7 +44,7 @@ int main()
         }
 
         free(s.informations);
-        s.informations = calloc(peopleCount, sizeof(int));
+        s.informations = calloc(peopleCount, sizeof(long long));
         s.size = 0;
         hit = 0;
 
@@ -63,9 +63,9 @@ int main()
 
         for (int j = 0; j < peopleCount; j++)
         {
-            int total_attack = left[j] + right[j];
-            int turns = (towers[j][1] + total_attack - 1) / total_attack;
-            printf("%d ", turns);
+            long long totalHit = left[j] + right[j];
+            long long turns = (towers[j][1] + totalHit - 1) / totalHit;
+            printf("%lld ", turns);
         }
         printf("\n");
 
